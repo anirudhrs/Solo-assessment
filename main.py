@@ -87,6 +87,7 @@ cocktail_matches = set()
 partial_cocktails = {}
 cocktails_ingredients, ingredients_to_cocktails, compatible_ingredients, recipes = set_up_drinks_lookup()
 all_ingredients = set([j for i in cocktails_ingredients.values() for j in i])
+print(cocktails_ingredients)
 with open('ingredients.txt', 'w') as f:
     for i in sorted(all_ingredients):
         f.write(str(i))
@@ -114,6 +115,6 @@ if __name__ == "__main__":
     print("\n The coctails you can make with these ingredients are", cocktail_matches)
     print("\n The recipes are in possible_recipes.txt file")
 
-    with open('ingredients.txt', 'w') as f:
+    with open('possible_recipes.txt', 'w') as f:
         for i in cocktail_matches:
             f.write(str(i) + ": " + "\t" + recipes[i] + "\n")
